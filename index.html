@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINKIFY Google Docs Copier</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="logo">L</div>
+      <div>
+        <h1>LINKIFY Docs Copier</h1>
+        <p>Google Docs Copy & Sharing Automation</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Google Account</h2>
+        <span id="connectionStatus" class="status offline">Not Connected</span>
+      </div>
+
+      <p class="muted">Connect your official LINKIFY Gmail account.</p>
+
+      <div class="account-box">
+        <span>Google Account</span>
+        <strong>akbarisonline@gmail.com</strong>
+      </div>
+
+      <button id="connectBtn" class="btn btn-dark">
+        Connect Google Account
+      </button>
+    </section>
+
+    <section class="card">
+      <h2>Create New Document Copy</h2>
+      <p class="muted">
+        Paste the original Google Docs or Google Drive file link.
+        Word documents will be converted automatically.
+      </p>
+
+      <label for="docUrl">Original Document URL</label>
+      <input
+        type="url"
+        id="docUrl"
+        placeholder="Paste Google Docs or Drive link"
+      >
+
+      <label for="newName">New Document Name (Optional)</label>
+      <input
+        type="text"
+        id="newName"
+        placeholder="LINKIFY - Client Article Copy"
+      >
+
+      <div class="settings">
+        <div class="setting-row">
+          <span>Document Format</span>
+          <strong>Google Docs</strong>
+        </div>
+        <div class="setting-row">
+          <span>Email Replacement</span>
+          <strong>Automatic when detectable</strong>
+        </div>
+        <div class="setting-row">
+          <span>General Access</span>
+          <strong>Anyone with the link</strong>
+        </div>
+        <div class="setting-row">
+          <span>Permission</span>
+          <strong>Viewer</strong>
+        </div>
+      </div>
+
+      <button id="createBtn" class="btn btn-primary" disabled>
+        Create Copy & Generate Link
+      </button>
+
+      <div id="message" class="message hidden"></div>
+
+      <div id="result" class="result hidden">
+        <h3>New Google Document Created!</h3>
+        <p id="replacementInfo" class="muted"></p>
+        <input type="text" id="resultLink" readonly>
+
+        <button id="copyBtn" class="btn btn-success">
+          Copy Shareable Link
+        </button>
+
+        <a id="openLink" href="#" target="_blank" rel="noopener">
+          Open Google Document
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Recent Copies</h2>
+        <button id="clearHistory" class="text-btn">Clear History</button>
+      </div>
+      <div id="history">
+        <p class="muted">No copies created yet.</p>
+      </div>
+    </section>
+
+    <footer>
+      LINKIFY Guest Posting Agency
+      <br>
+      Quality Links | Real Results
+    </footer>
+  </main>
+</body>
+</html>
