@@ -355,7 +355,7 @@ async function createCopy() {
     }
 
     const newName =
-      customName || `LINKIFY - ${original.name} - Copy`;
+      customName || `LINKIFY - ${original.name} `;
 
     let copy;
 
